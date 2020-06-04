@@ -17,3 +17,5 @@ Imports:
     vctrs
 Suggests: 
     withr
+URL: https://github.com/moodymudskipper/once
+BugReports: https://github.com/moodymudskipper/once/issues
