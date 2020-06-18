@@ -6,7 +6,7 @@
 `once` provides a collection of single use function operators. These are
 functions that modify a function for one call only. `debugonce()` is a
 base R function that matches this description already, and its approach
-is generalized..
+is generalized.
 
 The modified functions include control flow constructs as you can see
 below.
@@ -31,11 +31,15 @@ below.
     adverb) to a function for a single call
 
 Using these functions is often more compact that alternatives, but they
-are other advantages : \* arguably more readable in many case \* Avoid
-parenthesis overload \* Avoid having to insert closing parenthesis at an
-awkward place, and associated potential mistakes \* Can be used to
-decorate a step of a magrittr pipe chain without making a mess \*
-trivial to comment in and out when debugging
+are other advantages :
+
+  - arguably more readable in many case
+  - Avoid parenthesis overload
+  - Avoid having to insert closing parenthesis at an awkward place, and
+    associated potential mistakes
+  - Can be used to decorate a step of a magrittr pipe chain without
+    making a mess
+  - trivial to comment in and out when debugging
 
 ## Installation
 
@@ -53,7 +57,7 @@ library(once)
 
 ### progress bars
 
-You’ll have to run those yourself to see the progress bar
+You’ll have to run those yourself to see the progress bar.
 
 ``` r
 # just call pb_for() to get a progress bar
@@ -148,20 +152,18 @@ add(3, 4)
 ```
 
 `system_time_once()` prints the `system.time()` of the next relevant
-call,
+call.
 
 ``` r
 system_time_once(sample)
 x <- sample(1e6)
 #>    user  system elapsed 
-#>    0.12    0.00    0.13
+#>    0.09    0.00    0.09
 x <- sample(1e6)
 ```
 
-  - `sink_once()` uses `sink()` to divert the ouput of the next relevant
-    call
-
-<!-- end list -->
+`sink_once()` uses `sink()` to divert the ouput of the next relevant
+call.
 
 ``` r
 greet <- function(x,y){
@@ -186,7 +188,7 @@ greet("Hi", "What's up?")
 ```
 
 `surround_once()` surrounds the next relevant call with a surrounding
-function, such as `suppressWarnings`
+function, such as `suppressWarnings`.
 
 `with_once()` uses `with()` a single time on the next relevant call, and
 support similar functions such as `withr::with_*` functions.
